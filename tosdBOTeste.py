@@ -154,7 +154,7 @@ async def on_message(mensagem):
 	elif mensagem.content.upper().startswith('$TERENPRO'):
 		await client.send_message(mensagem.channel, "Eu amo o Joãozinho :heart: - DekuFly")
 	elif mensagem.content.upper().startswith('$COMIDA'):
-		await client.send_message(mensagem.channel, "Não sei vc mas meu compilador me alimenta muito bem, e esses estimulos são uma delicia!")
+		await client.send_message(mensagem.channel, "<@%s> Alimentado, Não sei vc carinha, mas meu compilador me alimenta muito bem, e esses estimulos são uma delicia!" % (userID))
 
 '''
 dentro dos " " tem um token secreto que vai ser diferente no bot original.
