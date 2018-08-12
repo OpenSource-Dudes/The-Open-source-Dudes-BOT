@@ -110,6 +110,8 @@ async def on_ready():
 	else:
 		await client.change_presence(game=discord.Game(name="com os temas do VSCode"))
 
+	await client.send_message(discord.Object(id="476790998442311691"), "Hey, estou online!! Queres ver as minhas novidades? Pronto, eu conto-te tudo. Agora podes ver as nossas lives ao escrever '$live'. Se o chat estiver muito parado, escreve '$interação-social' e anima um pouco as coisas. Por fim, podes ainda escrever '$terminal' e aprender um pouco de linux! Espero que gostes, e caso precises de ajuda escreve '$help'")
+
 @client.event
 #esta função vai ser executada quando um membro entrar no servidor (não testado)
 async def on_member_join(member):
@@ -191,4 +193,4 @@ caso queiras saber o token do teu bot basta ires a este link:
 o teu token!! :D 
 '''
 
-client.run("teu_token")
+client.run("Teu_token")
