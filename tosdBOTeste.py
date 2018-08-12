@@ -97,25 +97,25 @@ olas = [
 async def on_ready():
 	#quando o bot estiver online printar informação no terminal
 	print("O bot está online!!")
-	if(dia == "12" and mes == "8"):
+	if(dia == 13 and mes == 8):
 		await client.change_presence(game=discord.Game(name="parabéns para MIM <3"))
-		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS PARA MIM!!! :confetti_ball: :tada: :confetti_ball: :tada: espero ganhar uma novo compilador...")
-	elif(dia == "1" and mes == "3"):
+		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS PARA MIM!!! :confetti_ball: :tada: :confetti_ball: :tada: espero ganhar um novo compilador...")
+	elif(dia == 1 and mes == 3):
 		await client.change_presence(game=discord.Game(name="parabéns para o TerenPro"))
 		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @TerenPro#3391 Felicidades carinha!")
-	elif(dia == "2" and mes == "3"):
+	elif(dia == 2 and mes == 3):
                 await client.change_presence(game=discord.Game(name="parabéns para o Miguel Ferreira"))
 		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Miguel Ferreira#9929 Felicidades carinha!")
-	elif(dia == "1" and mes == "5"):
+	elif(dia == 1 and mes == 5):
 		await client.change_presence(game=discord.Game(name="parabéns para o Victor Geruso"))
 		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Victor Geruso#9057 Felicidades carinha!")
-	elif(dia == "30" and mes == "6"):
+	elif(dia == 30 and mes == 6):
 		await client.change_presence(game=discord.Game(name="parabéns para o Ryec"))
 		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Ryec (Eric Montelares)#4770 Felicidades carinha!")
 	else:
 		await client.change_presence(game=discord.Game(name="com os temas do VSCode"))
 
-	await client.send_message(discord.Object(id="476790998442311691"), "Hey, estou online!! Queres ver as minhas novidades? Pronto, eu conto-te tudo. Agora podes ver as nossas lives ao escrever '$live'. Se o chat estiver muito parado, escreve '$interação-social' e anima um pouco as coisas. Por fim, podes ainda escrever '$terminal' e aprender um pouco de linux! Espero que gostes, e caso precises de ajuda escreve '$help'")
+	await client.send_message(discord.Object(id="476790998442311691"), "Hey, estou online!! Queres ver as minhas novidades? Pronto, eu conto-te tudo. Agora podes ver as nossas lives ao escrever '$live'. Se o chat estiver muito parado, escreve '$interação-social' e anima um pouco as coisas. Por fim, podes ainda escrever '$terminal' e aprender um pouco de linux, para mais links de estudo usa o comando '$aprender'! Espero que gostes, e caso precises de ajuda escreve '$help'")
 
 @client.event
 #esta função vai ser executada quando um membro entrar no servidor (não testado)
@@ -192,6 +192,13 @@ async def on_message(mensagem):
 		await client.send_message(mensagem.channel, "Hey, <@%s> eu não tenho um pai, eu tenho 4. O Miguel, o Vitor, o Ryec e o Teren! Agora imagina naquela noite..." % (userID))
 	elif mensagem.content.upper().startswith('$TERMINAL'):
 		await client.send_message(mensagem.channel, "<@%s>, então queres aprender sobre o terminal do linux né? Pronto, como deves saber linux é um kernel (o núcleo de um SO, usado por todas as distribuiçẽos linux, android e muito mais). Linux é conhecido pelo seu poder de ser altamente customizável e pelo seu terminal. Para começar temos alguns comandos básicos. Para navegar pelas mais diversas pastas usa-se 'cd' seguido do nome da pasta (ex: cd Desktop), para veres onde te encontras escreves 'pwd' e recebes uma nota/um path de onde estás (ex: root). Para criar uma pasta usas o comando 'mkdir' e seguido do noem da pasta e caso queiras voltar a trás simplesmente escreve 'cd ..'. Agora que sabes navegar por pastas e criar pastas também deves querer saber como criar ficheiros, e é muito simples. Escreve 'touch' e o nome do arquivo. Ainda podes ver o conteúdo das pastas onde estás com 'dir' ou 'ls', e caso queiras ver o conteúdo de ficheiros podes escrever 'nano' seguido do nome do ficheiro. Boa sorte neste mundo Linux! Eu sei que pode parecer intimidador, para mim também é por vezes, mas com uma pesquisa tu consegues!" % (userID))
+	elif mensagem.content.upper().startswith('$APRENDER'):
+		await client.send_message(message.channel, " <@%s>, vejo que queres aprender. Sorte a tua que eu tenho uma lista completa e fresquinha para ti. Tem desde websites a canasi do youtube (lembrando que alguns são em inglês). Se quiseres aprender mais sobre o mundo linux, tens o canal do Diolinux (https://www.youtube.com/user/Diolinux) e também tens o seu blog, https://www.diolinux.com.br, aidna existem muitos outros forums sobre linux como o Vivaolinux, https://www.vivaolinux.com.br, e o Ask Ubuntu, https://askubuntu.com. Para aprender a apredner temos de começar pelo básico né? Começa pelo scratch, https://scratch.mit.edu/, ou o code.org, https://code.org/. Mas sempre podes sempre a escrever código, podes aprender nestes sites: https://www.udemy.com/ , https://www.codecademy.com/ , https://www.alura.com.br/ , https://www.cursoemvideo.com/ e podes ainda 'expor dúvidas' no stackoverflow, https://pt.stackoverflow.com/. Por fim tens aqui alguns canais de programação: https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw (The Coding Train), https://www.youtube.com/channel/UCJbPGzawDH1njbqV-D5HqKw (Thenewboston), https://www.youtube.com/channel/UCFuIUoyHB12qpYa8Jpxoxow (Código Fonte TV), https://www.youtube.com/channel/UCoLUji8TYrgDy74_iiazvYA (Jarvis) e por fim https://www.youtube.com/channel/UCjdRbKZ494DfZ4zeX19rICw (Coding Blond). Espero que aprendas muito!!" % (userID))
+	elif mensagem.content.upper().startswith('$PARABENS-TOSDBOT'):
+		if dia == 13 and mes == 8:
+			await client.send_message(mensagem.channel, "<@%s>, obrigado!! :heart: :tosd:" % (userID))
+		else:
+			await client.send_message(mensagem.channel, "<@%s>, não é o meu aniversário, mas obrigado!" % (userID))
 
 '''
 dentro dos " " tem um token secreto que vai ser diferente no bot original.
