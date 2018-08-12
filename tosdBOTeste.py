@@ -6,9 +6,17 @@ from discord.ext import commands
 import asyncio
 import random
 
+#para fazer o easter-egg de aniversário
+import datetime
+
 Client = discord.Client()
 #command_prefix = "$" vai defenir o prefixo do bot (ex: $play)
 client = commands.Bot(command_prefix = "$")
+
+#vamos criar a variável que vai guardar o dia, mês e ano
+data = datetime.datetime.now()
+dia = data.day
+mes = data.month
 
 #quando executado o comando '$FRASE' o bot vem buscar uma frase random a este array
 frases = [
@@ -64,7 +72,8 @@ frases = [
 	"Não existe linguagem melhor que outra",
 	"JOÃO NÃO MEXAS NO BOT",
 	"ERIC NÃO DERRUBES O SERVIDOR!",
-	"Por amor de Deus... O DEKUFLY NÃO SABE MEXER NO GITHUB!"
+	"Por amor de Deus... O DEKUFLY NÃO SABE MEXER NO GITHUB!",
+	"Vou cantar, vou dançar, vou fazer hmhm até me cansar, TODA A NOITE, TODA A NOITEEE"
 	]
 
 #quando executado o comando '$OLA' o bot vem buscar um ola random a este array
@@ -88,7 +97,18 @@ olas = [
 async def on_ready():
 	#quando o bot estiver online printar informação no terminal
 	print("O bot está online!!")
-	await client.change_presence(game=discord.Game(name="com o tema do VSCODE"))
+	if(dia == "12" and mes == "8"):
+		await client.change_presence(game=discord.Game(name="parabéns para MIM <3"))
+	elif(dia == "1" and mes == "3"):
+		await client.change_presence(game=discord.Game(name="parabéns para o TerenPro"))
+	elif(dia == "2" and mes == "3"):
+                await client.change_presence(game=discord.Game(name="parabéns para o Miguel Ferreira"))
+	elif(dia == "1" and mes == "5"):
+		await client.change_presence(game=discord.Game(name="parabéns para o Vitor Geruso"))
+	elif(dia == "30" and mes == "6"):
+		await client.change_presence(game=discord.Game(name="parabéns para o Ryec"))
+	else:
+		await client.change_presence(game=discord.Game(name="com os temas do VSCode"))
 
 @client.event
 #esta função vai ser executada quando um membro entrar no servidor (não testado)
@@ -142,7 +162,7 @@ async def on_message(mensagem):
 		userID = mensagem.author.id
 		await client.send_message(mensagem.channel, "<@%s> , aqui está o nosso GitHub, todos os nossos projetos estão lá: https://github.com/OpenSource-Dudes" % (userID))
 	elif mensagem.content.upper().startswith('$HELP'):
-		await client.send_message(mensagem.channel, "<@%s> , não é preciso ter vergonha de pedir ajuda por isso é que estou aqui! Com o comando '$frase' podes ver frases inspiradoras! (e outras nem um pouco) Com o comando '$ola' recebes uma mensagem carinhosa do nosso bot com um 'Olá' numa lingua diferente. Por fim, com o comando '$rep' podes ver o GitHub do grupo e ver códigos open-source da comunidade, até mesmo o source-code do nosso bot!!" % (userID))
+		await client.send_message(mensagem.channel, "<@%s> , não é preciso ter vergonha de pedir ajuda por isso é que estou aqui! Com o comando '$frase' podes ver frases inspiradoras! (e outras nem um pouco) Com o comando '$ola' recebes uma mensagem carinhosa do nosso bot com um 'Olá' numa lingua diferente. Por fim, com o comando '$rep' podes ver o GitHub do grupo e ver códigos open-source da comunidade, até mesmo o source-code do nosso bot!! Se escreveres '$comida' podes ser alimentado, e se vires que o servidor está parado escreve '$interação-social'. Espero que gostes de  estar aqui :D" % (userID))
 	elif mensagem.content.upper().startswith('$SUICIDIO'):
 		await client.send_message(mensagem.channel, "Hey, estás a pensar em suicídio? Fica sabendo que isso é muito mau, mesmo que o digamos na brincadeira. Segundo a OMS, 800 mil pessoas suicidaram-se em 2012… é muita coisa não é... ? Se tiveres com problemas, fala com alguém que confies, com os pais ou até mesmo com um professor que confies. Nunca estás sozinho. Eu, Miguel Ferreira sei o que é nos sentirmos no fundo, mas nunca chegues a esse ponto, a tua vida é útil para alguém. Procura o número de apoio à depressão da tua zona e ajuda-te a ti mesmo. Eu agradeço imenso. :heart:")
 	elif mensagem.content.upper().startswith('$SPOILER'):
@@ -155,6 +175,19 @@ async def on_message(mensagem):
 		await client.send_message(mensagem.channel, "Eu amo o Joãozinho :heart: - DekuFly")
 	elif mensagem.content.upper().startswith('$COMIDA'):
 		await client.send_message(mensagem.channel, "<@%s> Alimentado, Não sei vc carinha, mas meu compilador me alimenta muito bem, e esses estimulos são uma delicia!" % (userID))
+	elif mensagem.content.upper().startswith('$INTERAÇÃO-SOCIAL'):
+		await client.send_message(mensagem.channel, "@everyone, o/a <@%s> está a querer conversar e manter o server ativo, que tal fazermos um jogo? Entrar numa chamada? Qualquer coisa!!" % (userID))
+	elif mensagem.content.upper().startswith('$LIVE'):
+		await client.send_message(mensagem.channel, "<@%s> temos um canal de livestreams na twitch, bora ver se estamos em direto? https://www.twitch.tv/theosdudes" % (userID))
+	elif mensagem.content.upper().startswith('$PAI'):
+		await client.send_message(mensagem.channel, "Hey, <@%s> eu não tenho um pai, eu tenho 4. O Miguel, o Vitor, o Ryec e o Teren! Agora imagina naquela noite..." % (userID))
+	elif mensagem.content.upper().startswith('$TERMINAL'):
+		channel = 'linux'
+		if mensagem.channel == "linux":
+			await client.send_message(channel, "<@%s> , então queres aprender sobre o terminal do linux né? Pronto, como deves saber linux é um kernel (o núcleo de um SO, usado por todas as distribuiçẽos linux, android e muito mais). Linux é conhecido pelo seu poder de ser altamente customizável e pelo seu terminal. Para começar temos alguns comandos básicos. Para navegar pelas mais diversas pastas usa-se 'cd' seguido do nome da pasta (ex: cd Desktop), para veres onde te encontras escreves 'pwd' e recebes uma nota/um path de onde estás (ex: root). Para criar uma pasta usas o comando 'mkdir' e seguido do noem da pasta e caso queiras voltar a trás simplesmente escreve 'cd ..'. Agora que sabes navegar por pastas e criar pastas também deves querer saber como criar ficheiros, e é muito simples. Escreve 'touch' e o nome do arquivo. Ainda podes ver o conteúdo das pastas onde estás com 'dir' ou 'ls', e caso queiras ver o conteúdo de ficheiros podes escrever 'nano' seguido do nome do ficheiro. Boa sorte neste mundo Linux! Eu sei que pode parecer intimidador, para mim também é por vezes, mas com uma pesquisa tu consegues!" % (userID))
+		else:
+			await client.send_menssage(mensagem.channel, "#linux")
+                        await client.send_message(channel, "<@%s> , então queres aprender sobre o terminal do linux né? Pronto, como deves saber linux é um kernel (o núcleo de um SO, usado por todas as distribuiçẽos linux, android e muito mais). Linux é conhecido pelo seu poder de ser altamente customizável e pelo seu terminal. Para começar temos alguns comandos básicos. Para navegar pelas mais diversas pastas usa-se 'cd' seguido do nome da pasta (ex: cd Desktop), para veres onde te encontras escreves 'pwd' e recebes uma nota/um path de onde estás (ex: root). Para criar uma pasta usas o comando 'mkdir' e seguido do nome da pasta e caso queiras voltar a trás simplesmente escreve 'cd ..'. Agora que sabes navegar por pastas e criar pastas também deves querer saber como criar ficheiros, e é muito simples. Escreve 'touch' e o nome do arquivo. Ainda podes ver o conteúdo das pastas onde estás com 'dir' ou 'ls', e caso queiras ver o conteúdo de ficheiros podes escrever 'nano' seguido do nome do ficheiro. Boa sorte neste mundo Linux! Eu sei que pode parecer intimidador, para mim também é por vezes, mas com uma pesquisa tu consegues!" % (userID))
 
 '''
 dentro dos " " tem um token secreto que vai ser diferente no bot original.
@@ -163,4 +196,4 @@ caso queiras saber o token do teu bot basta ires a este link:
 o teu token!! :D 
 '''
 
-client.run("Seu token aqui!")
+client.run("teu_token")
