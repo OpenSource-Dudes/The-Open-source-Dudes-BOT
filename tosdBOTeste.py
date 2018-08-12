@@ -23,7 +23,7 @@ frases = [
 	"Traição não é traição, quando você trai uma pessoa - Pedro Fatorelli, 2018",
 	"Todos deviam aprender a programar, pois nos ensina a pensar - Steve Jobs",
 	"Coding your own game is easier than you think. With Udemy... - Cara da Udemy",
-	"Mozzila is dead... :pensive: - Vitor e Eric (e muitas outras pessoas)",
+	"Mozzila is dead... :pensive: - Victor Geruso e Eric (e muitas outras pessoas)",
 	"Nuke, incomming!!",
 	"First think. Second Dream. Third believe. And finally, dare. - Walt Disney",
 	"Vamos por partes... - Jack, o Estripador",
@@ -34,7 +34,7 @@ frases = [
 	"Só está limitado a aquilo que se limita, sabe? Você pode sempre melhorar -  Lindsey Vonn",
 	"Neste mundo, os que sorriem são os mais fortes - Nana Shimura",
 	"Esse é o meu sonho desde que eu era pequeno... - Deku",
-	"Quero ser um herói legal que enfrenta os problemas com um sorriso, tal como você - Deku",
+	"Quero ser um herói legal que enfrenta os problemas com um sorriso, tal como você - Miguel",
 	"Udemy Plataforma Online de arrependimentos e aprendizado superficial - Eric",
 	"Programação Orientada a Modinha não da certo, vai por min - Eric Montelares",
 	"Se a lua não tem porta como os homem chegou lá?",
@@ -45,7 +45,7 @@ frases = [
 	"MacOS? Bitch I use linux!",
 	"Não hackeiem o Eric Montelares",
 	"O JOÃO APAGOU O CÓDIGO!! PORRA JOÃO!",
-	"DekuFly? Aprende a falar!",
+	"Miguel? Aprende a falar!",
 	"Pão e água mantêm uma pessoa, mas o importante é o café.",
 	"Se a Terra é plana porque é que Marte é redondo?",
 	"I'm sexy and I know it",
@@ -54,7 +54,7 @@ frases = [
 	"Quer ver o meu pénis MICRO e SOFT? - Bill Gates",
 	"DC ou Marvel?",
 	"Vai programar em vez de estares aqui a spammar as frases!!!",
-	"O Vitor devia ser CEO",
+	"O Victor Geruso devia ser CEO",
 	"Ei secretária? Bora 01100110 01101111 01100100 01100101 01110010?? :smirk:",
 	"Pimbaaa",
 	"Não pode isso produção, e o family friendly fica onde?",
@@ -64,7 +64,7 @@ frases = [
 	"Não vale a pena chorar no Twitter...",
 	"XBOX ou PS4?",
 	"Coca-cola ou Pepsi?",
-	"Java, C++, Fortran... tudo dá dor de cabeça, até JS né Vitor?",
+	"Java, C++, Fortran... tudo dá dor de cabeça, até JS né Victor Geruso?",
 	"48!!",
 	"Você já procurou bots na internet?",
 	"Kushima o hacker que não sabia programar e nem falar ingles - Grupo TOSD",
@@ -99,14 +99,19 @@ async def on_ready():
 	print("O bot está online!!")
 	if(dia == "12" and mes == "8"):
 		await client.change_presence(game=discord.Game(name="parabéns para MIM <3"))
+		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS PARA MIM!!! :confetti_ball: :tada: :confetti_ball: :tada: espero ganhar uma novo compilador...")
 	elif(dia == "1" and mes == "3"):
 		await client.change_presence(game=discord.Game(name="parabéns para o TerenPro"))
+		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @TerenPro#3391 Felicidades carinha!")
 	elif(dia == "2" and mes == "3"):
                 await client.change_presence(game=discord.Game(name="parabéns para o Miguel Ferreira"))
+		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Miguel Ferreira#9929 Felicidades carinha!")
 	elif(dia == "1" and mes == "5"):
-		await client.change_presence(game=discord.Game(name="parabéns para o Vitor Geruso"))
+		await client.change_presence(game=discord.Game(name="parabéns para o Victor Geruso"))
+		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Victor Geruso#9057 Felicidades carinha!")
 	elif(dia == "30" and mes == "6"):
 		await client.change_presence(game=discord.Game(name="parabéns para o Ryec"))
+		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Ryec (Eric Montelares)#4770 Felicidades carinha!")
 	else:
 		await client.change_presence(game=discord.Game(name="com os temas do VSCode"))
 
@@ -136,6 +141,8 @@ async def on_message(mensagem):
 		await client.send_message(mensagem.channel, "<@%s> você emane beleza :heart_eyes: " % (userID))	
 	elif mensagem.content.upper().startswith('$MOZILLA'):
 		await client.send_message(mensagem.channel, "Era um bom browser... era... :pensive: :candle: ")
+	elif mensagem.content.upper().satartswith('$GUANA'):
+		await client.send_message(mensagem.channel, "Tem que aprender algoritmos!! - Gustavo Guanabara - https://www.youtube.com/user/cursosemvideo")
 	elif mensagem.content.upper().startswith('$PS4'):
 		await client.send_message(mensagem.channel, "Adeus Minecraft! :worried:")
 	elif mensagem.content.upper().startswith('$XBOX'):
@@ -184,7 +191,7 @@ async def on_message(mensagem):
 	elif mensagem.content.upper().startswith('$PAI'):
 		await client.send_message(mensagem.channel, "Hey, <@%s> eu não tenho um pai, eu tenho 4. O Miguel, o Vitor, o Ryec e o Teren! Agora imagina naquela noite..." % (userID))
 	elif mensagem.content.upper().startswith('$TERMINAL'):
-		await client.send_message(mensagem.channel, "<@%s> , então queres aprender sobre o terminal do linux né? Pronto, como deves saber linux é um kernel (o núcleo de um SO, usado por todas as distribuiçẽos linux, android e muito mais). Linux é conhecido pelo seu poder de ser altamente customizável e pelo seu terminal. Para começar temos alguns comandos básicos. Para navegar pelas mais diversas pastas usa-se 'cd' seguido do nome da pasta (ex: cd Desktop), para veres onde te encontras escreves 'pwd' e recebes uma nota/um path de onde estás (ex: root). Para criar uma pasta usas o comando 'mkdir' e seguido do noem da pasta e caso queiras voltar a trás simplesmente escreve 'cd ..'. Agora que sabes navegar por pastas e criar pastas também deves querer saber como criar ficheiros, e é muito simples. Escreve 'touch' e o nome do arquivo. Ainda podes ver o conteúdo das pastas onde estás com 'dir' ou 'ls', e caso queiras ver o conteúdo de ficheiros podes escrever 'nano' seguido do nome do ficheiro. Boa sorte neste mundo Linux! Eu sei que pode parecer intimidador, para mim também é por vezes, mas com uma pesquisa tu consegues!" % (userID))
+		await client.send_message(mensagem.channel, "<@%s>, então queres aprender sobre o terminal do linux né? Pronto, como deves saber linux é um kernel (o núcleo de um SO, usado por todas as distribuiçẽos linux, android e muito mais). Linux é conhecido pelo seu poder de ser altamente customizável e pelo seu terminal. Para começar temos alguns comandos básicos. Para navegar pelas mais diversas pastas usa-se 'cd' seguido do nome da pasta (ex: cd Desktop), para veres onde te encontras escreves 'pwd' e recebes uma nota/um path de onde estás (ex: root). Para criar uma pasta usas o comando 'mkdir' e seguido do noem da pasta e caso queiras voltar a trás simplesmente escreve 'cd ..'. Agora que sabes navegar por pastas e criar pastas também deves querer saber como criar ficheiros, e é muito simples. Escreve 'touch' e o nome do arquivo. Ainda podes ver o conteúdo das pastas onde estás com 'dir' ou 'ls', e caso queiras ver o conteúdo de ficheiros podes escrever 'nano' seguido do nome do ficheiro. Boa sorte neste mundo Linux! Eu sei que pode parecer intimidador, para mim também é por vezes, mas com uma pesquisa tu consegues!" % (userID))
 
 '''
 dentro dos " " tem um token secreto que vai ser diferente no bot original.
