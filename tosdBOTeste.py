@@ -102,16 +102,12 @@ async def on_ready():
 		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS PARA MIM!!! :confetti_ball: :tada: :confetti_ball: :tada: espero ganhar um novo compilador...")
 	elif(dia == 1 and mes == 3):
 		await client.change_presence(game=discord.Game(name="parabéns para o TerenPro"))
-		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @TerenPro#3391 Felicidades carinha!")
 	elif(dia == 2 and mes == 3):
                 await client.change_presence(game=discord.Game(name="parabéns para o Miguel Ferreira"))
-		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Miguel Ferreira#9929 Felicidades carinha!")
 	elif(dia == 1 and mes == 5):
 		await client.change_presence(game=discord.Game(name="parabéns para o Victor Geruso"))
-		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Victor Geruso#9057 Felicidades carinha!")
 	elif(dia == 30 and mes == 6):
 		await client.change_presence(game=discord.Game(name="parabéns para o Ryec"))
-		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS @Ryec (Eric Montelares)#4770 Felicidades carinha!")
 	else:
 		await client.change_presence(game=discord.Game(name="com os temas do VSCode"))
 
@@ -141,7 +137,7 @@ async def on_message(mensagem):
 		await client.send_message(mensagem.channel, "<@%s> você emane beleza :heart_eyes: " % (userID))	
 	elif mensagem.content.upper().startswith('$MOZILLA'):
 		await client.send_message(mensagem.channel, "Era um bom browser... era... :pensive: :candle: ")
-	elif mensagem.content.upper().satartswith('$GUANA'):
+	elif mensagem.content.upper().startswith('$GUANA'):
 		await client.send_message(mensagem.channel, "Tem que aprender algoritmos!! - Gustavo Guanabara - https://www.youtube.com/user/cursosemvideo")
 	elif mensagem.content.upper().startswith('$PS4'):
 		await client.send_message(mensagem.channel, "Adeus Minecraft! :worried:")
