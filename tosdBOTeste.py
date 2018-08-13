@@ -155,15 +155,15 @@ async def on_message(mensagem):
 	elif mensagem.content.upper().startswith('$DC'):
 		await client.send_message(mensagem.channel, "É um pássaro? É um avião? Não é o homem pássaroooo (Produção, não é um morcego?)")	
 	elif mensagem.content.upper().startswith('$BOM-DIA'):
-    	await client.send_message(mensagem.channel, "BOM DIAAAAAAA! Carinha, não sinto o calor do sol, mas como vc é um humano sinta por mim!!!")
+    	        await client.send_message(mensagem.channel, "BOM DIAAAAAAA! Carinha, não sinto o calor do sol, mas como vc é um humano sinta por mim!!!")
 	elif mensagem.content.upper().startswith('$BOA-TARDE'):
-    	await client.send_message(mensagem.channel, "BOA TARDE, Hora de tirar um cochilo e descançar para a noite PRO-GRA-MAR!!!!")
+    	        await client.send_message(mensagem.channel, "BOA TARDE, Hora de tirar um cochilo e descançar para a noite PRO-GRA-MAR!!!!")
 	elif mensagem.content.upper().startswith('$BOA-NOITE'):
-    	await client.send_message(mensagem.channel, "BOA NOITE, carinha, não é hora de dormir, pegue a pizza e coca-cola, ou um pão e café abra o VScode e fabrique um amiguinho para mim!!!!")
+    	        await client.send_message(mensagem.channel, "BOA NOITE, carinha, não é hora de dormir, pegue a pizza e coca-cola, ou um pão e café abra o VScode e fabrique um amiguinho para mim!!!!")
 	elif mensagem.content.upper().startswith('$TCHAU-BOT'):
-    	await client.send_message(mensagem.channel, "haaaaa... você já vai carinha? vai não vamos conversar um pouco o papo tava tão legal!")
+    	        await client.send_message(mensagem.channel, "haaaaa... você já vai carinha? vai não vamos conversar um pouco o papo tava tão legal!")
 	elif mensagem.content.upper().startswith('$MAE'):
-    	await client.send_message(mensagem.channel, "Ah minha mãe, minha mãe! ela que faz viver todos os meu circuitos, quer dizer os dela, que me dão vida, a minha mais simples variável só existe por que um dia ela ligou, OBRIGADO PLACA MÃE!")
+    	        await client.send_message(mensagem.channel, "Ah minha mãe, minha mãe! ela que faz viver todos os meu circuitos, quer dizer os dela, que me dão vida, a minha mais simples variável só existe por que um dia ela ligou, OBRIGADO PLACA MÃE!")
 	elif mensagem.content.upper().startswith('$FRASE'):
 		frase = random.choice(frases)
 		await client.send_message(mensagem.channel, frase)
