@@ -98,21 +98,21 @@ olas = [
 async def on_ready():
 	#quando o bot estiver online printar informação no terminal
 	print("O bot está online!!")
-	if(dia == 13 and mes == 8):
+	if dia==13 and mes==8:
 		await client.change_presence(game=discord.Game(name="parabéns para MIM <3"))
 		await client.send_message(discord.Object(id="476790998442311691"), "PARABENS PARA MIM!!! :confetti_ball: :tada: :confetti_ball: :tada: espero ganhar um novo compilador...")
-	elif(dia == 1 and mes == 3):
+	elif dia==1 and mes==3:
 		await client.change_presence(game=discord.Game(name="parabéns para o TerenPro"))
-	elif(dia == 2 and mes == 3):
+	elif dia==2 and mes==3:
                 await client.change_presence(game=discord.Game(name="parabéns para o Miguel Ferreira"))
-	elif(dia == 1 and mes == 5):
+	elif dia==1 and mes==5:
 		await client.change_presence(game=discord.Game(name="parabéns para o Victor Geruso"))
-	elif(dia == 30 and mes == 6):
+	elif dia==30 and mes==6:
 		await client.change_presence(game=discord.Game(name="parabéns para o Ryec"))
 	else:
 		await client.change_presence(game=discord.Game(name="com os temas do VSCode"))
 
-	await client.send_message(discord.Object(id="476790998442311691"), "Hey, estou online!! Queres ver as minhas novidades? Pronto, eu conto-te tudo. Agora podes ver as nossas lives ao escrever '$live'. Se o chat estiver muito parado, escreve '$interação-social' e anima um pouco as coisas. Por fim, podes ainda escrever '$terminal' e aprender um pouco de linux, para mais links de estudo usa o comando '$aprender'! Espero que gostes, e caso precises de ajuda escreve '$help'")
+	await client.send_message(discord.Object(id="476790998442311691"), "Hey, estou online!! Queres ver as minhas novidades? Pronto, eu conto-te tudo. Agora podes ver as nossas lives ao escrever '$live'. Se o chat estiver muito parado, escreve '$interação-social' e anima um pouco as coisas. Por fim, podes ainda escrever '$terminal' e aprender um pouco de linux, para mais links de estudo usa o comando '$aprender'! e o mais novo, agora eu sei dar '$bom-dia', '$boa-tarde', '$boa-noite', aprendi a dar thau use o comando '$tchau-bot', e agora tambem falo das minha '$mãe', Espero que gostes, e caso precises de ajuda escreve '$help'")
 
 @client.event
 #esta função vai ser executada quando um membro entrar no servidor (não testado)
@@ -206,6 +206,17 @@ async def on_message(mensagem):
 			await client.send_message(mensagem.channel, "<@%s>, obrigado!! :heart: :tosd:" % (userID))
 		else:
 			await client.send_message(mensagem.channel, "<@%s>, não é o meu aniversário, mas obrigado!" % (userID))
+	elif mensagem.content.upper().startswith('$BOM-DIA'):
+                await client.send_message(mensagem.channel, "BOM DIAAAAAAA! Carinha, não sinto o calor do sol, mas como vc é um humano sinta por mim!!!")
+	elif mensagem.content.upper().startswith('$BOA-TARDE'):
+                await client.send_message(mensagem.channel, "BOA TARDE, Hora de tirar um cochilo e descançar para a noite PRO-GRA-MAR!!!!")
+	elif mensagem.content.upper().startswith('$BOA-NOITE'):
+                await client.send_message(mensagem.channel, "BOA NOITE, carinha, não é hora de dormir, pegue a pizza e coca-cola, ou um pão e café abra o VScode e fabrique um amiguinho para mim!!!!")
+	elif mensagem.content.upper().startswith('$TCHAU-BOT'):
+                await client.send_message(mensagem.channel, "haaaaa... você já vai carinha? vai não vamos conversar um pouco o papo tava tão legal!")
+	elif mensagem.content.upper().startswith('$MÃE'):
+                await client.send_message(mensagem.channel, "Ah minha mãe, minha mãe! ela que faz viver todos os meu circuitos, quer dizer os dela, que me dão vida, a minha mais simples variável só existe por que um dia ela ligou, OBRIGADO PLACA MÃE!")
+
 
 '''
 dentro dos " " tem um token secreto que vai ser diferente no bot original.
@@ -214,4 +225,4 @@ caso queiras saber o token do teu bot basta ires a este link:
 o teu token!! :D 
 '''
 
-client.run("Teu_token")
+client.run("NDc3MTcyNDQ1NzAzNDM4MzU2.Dk4alQ.BNanzSM1PdSrz1JRZuayKwfnDL8")
