@@ -66,6 +66,7 @@ frases = [
 	"Coca-cola ou Pepsi?",
 	"Java, C++, Fortran... tudo dá dor de cabeça, até JS né Victor Geruso?",
 	"48!!",
+	"Eu dou trabalho mesmo",
 	"Você já procurou bots na internet?",
 	"Kushima o hacker que não sabia programar e nem falar ingles - Grupo TOSD",
 	"HTML é uma linguagem de programação!",
@@ -153,6 +154,16 @@ async def on_message(mensagem):
 		await client.send_message(mensagem.channel, "Hey, I'm Deadpool!")
 	elif mensagem.content.upper().startswith('$DC'):
 		await client.send_message(mensagem.channel, "É um pássaro? É um avião? Não é o homem pássaroooo (Produção, não é um morcego?)")	
+	elif mensagem.content.upper().startswith('$BOM-DIA'):
+    	await client.send_message(mensagem.channel, "BOM DIAAAAAAA! Carinha, não sinto o calor do sol, mas como vc é um humano sinta por mim!!!")
+	elif mensagem.content.upper().startswith('$BOA-TARDE'):
+    	await client.send_message(mensagem.channel, "BOA TARDE, Hora de tirar um cochilo e descançar para a noite PRO-GRA-MAR!!!!")
+	elif mensagem.content.upper().startswith('$BOA-NOITE'):
+    	await client.send_message(mensagem.channel, "BOA NOITE, carinha, não é hora de dormir, pegue a pizza e coca-cola, ou um pão e café abra o VScode e fabrique um amiguinho para mim!!!!")
+	elif mensagem.content.upper().startswith('$TCHAU-BOT'):
+    	await client.send_message(mensagem.channel, "haaaaa... você já vai carinha? vai não vamos conversar um pouco o papo tava tão legal!")
+	elif mensagem.content.upper().startswith('$MAE'):
+    	await client.send_message(mensagem.channel, "Ah minha mãe, minha mãe! ela que faz viver todos os meu circuitos, quer dizer os dela, que me dão vida, a minha mais simples variável só existe por que um dia ela ligou, OBRIGADO PLACA MÃE!")
 	elif mensagem.content.upper().startswith('$FRASE'):
 		frase = random.choice(frases)
 		await client.send_message(mensagem.channel, frase)
@@ -185,7 +196,7 @@ async def on_message(mensagem):
 	elif mensagem.content.upper().startswith('$LIVE'):
 		await client.send_message(mensagem.channel, "<@%s> temos um canal de livestreams na twitch, bora ver se estamos em direto? https://www.twitch.tv/theosdudes" % (userID))
 	elif mensagem.content.upper().startswith('$PAI'):
-		await client.send_message(mensagem.channel, "Hey, <@%s> eu não tenho um pai, eu tenho 4. O Miguel, o Vitor, o Ryec e o Teren! Agora imagina naquela noite..." % (userID))
+		await client.send_message(mensagem.channel, "Hey, <@%s> eu não tenho um pai, eu tenho 4. O Miguel, o Victor, o Ryec e o Teren! Agora imagina naquela noite..." % (userID))
 	elif mensagem.content.upper().startswith('$TERMINAL'):
 		await client.send_message(mensagem.channel, "<@%s>, então queres aprender sobre o terminal do linux né? Pronto, como deves saber linux é um kernel (o núcleo de um SO, usado por todas as distribuiçẽos linux, android e muito mais). Linux é conhecido pelo seu poder de ser altamente customizável e pelo seu terminal. Para começar temos alguns comandos básicos. Para navegar pelas mais diversas pastas usa-se 'cd' seguido do nome da pasta (ex: cd Desktop), para veres onde te encontras escreves 'pwd' e recebes uma nota/um path de onde estás (ex: root). Para criar uma pasta usas o comando 'mkdir' e seguido do noem da pasta e caso queiras voltar a trás simplesmente escreve 'cd ..'. Agora que sabes navegar por pastas e criar pastas também deves querer saber como criar ficheiros, e é muito simples. Escreve 'touch' e o nome do arquivo. Ainda podes ver o conteúdo das pastas onde estás com 'dir' ou 'ls', e caso queiras ver o conteúdo de ficheiros podes escrever 'nano' seguido do nome do ficheiro. Boa sorte neste mundo Linux! Eu sei que pode parecer intimidador, para mim também é por vezes, mas com uma pesquisa tu consegues!" % (userID))
 	elif mensagem.content.upper().startswith('$APRENDER'):
