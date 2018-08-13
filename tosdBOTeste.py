@@ -215,4 +215,4 @@ caso queiras saber o token do teu bot basta ires a este link:
 o teu token!! :D 
 '''
 
-client.run("NDc3MTcyNDQ1NzAzNDM4MzU2.Dk4alQ.BNanzSM1PdSrz1JRZuayKwfnDL8")
+client.run("Teu_token")
